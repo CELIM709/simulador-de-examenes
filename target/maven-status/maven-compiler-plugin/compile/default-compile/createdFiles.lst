@@ -11,6 +11,7 @@ com/sistema/logica/Evaluador.class
 com/sistema/ui/VentanaConfiguracionExamen.class
 com/sistema/modelos/Resultado.class
 com/sistema/modelos/Usuario.class
+com/sistema/ui/VentanaFormularioPregunta.class
 com/sistema/ui/VistaBancoPreguntas.class
 com/sistema/modelos/NivelDificultad.class
 com/sistema/ui/VentanaLogin.class

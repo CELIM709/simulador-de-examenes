@@ -17,9 +17,11 @@ public class VistaBancoPreguntas extends JDialog {
     private DefaultTableModel modelo;
     private TableRowSorter<DefaultTableModel> sorter;
     private JComboBox<String> cbTema, cbNivel;
+    private BancoPreguntas banco; // Referencia al banco
 
     public VistaBancoPreguntas(JFrame parent, BancoPreguntas banco) {
         super(parent, "Gestión del Banco de Preguntas", true);
+        this.banco = banco;
         setSize(1000, 600);
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
@@ -29,11 +31,7 @@ public class VistaBancoPreguntas extends JDialog {
 
         pnlFiltros.add(new JLabel("Tema:"));
         cbTema = new JComboBox<>();
-        cbTema.addItem("Todos");
-
-        for (String tema : banco.obtenerTemasDisponibles()) {
-            cbTema.addItem(tema);
-        }
+        actualizarComboTemas();
         pnlFiltros.add(cbTema);
 
         pnlFiltros.add(new JLabel("Nivel:"));
@@ -77,6 +75,18 @@ public class VistaBancoPreguntas extends JDialog {
         btnAgregar.setBackground(new Color(40, 167, 69));
         btnAgregar.setForeground(Color.WHITE);
 
+        // LOGICA DE AGREGAR PREGUNTA
+        btnAgregar.addActionListener(e -> {
+            VentanaFormularioPregunta form = new VentanaFormularioPregunta(this);
+            form.setVisible(true);
+            if (form.isGuardado()) {
+                banco.agregarPregunta(form.getPregunta());
+                cargarDatos(banco.getTodasLasPreguntas());
+                actualizarComboTemas();
+                JOptionPane.showMessageDialog(this, "Pregunta agregada con éxito.");
+            }
+        });
+
         JButton btnCerrar = new JButton("Cerrar");
         btnCerrar.addActionListener(e -> dispose());
 
@@ -100,19 +110,22 @@ public class VistaBancoPreguntas extends JDialog {
         }
     }
 
-    /**
-     * Lógica de filtrado combinada
-     */
+    private void actualizarComboTemas() {
+        cbTema.removeAllItems();
+        cbTema.addItem("Todos");
+        for (String tema : banco.obtenerTemasDisponibles()) {
+            cbTema.addItem(tema);
+        }
+    }
+
     private void aplicarFiltro() {
         String tema = cbTema.getSelectedItem().toString();
         String nivel = cbNivel.getSelectedItem().toString();
-
         List<RowFilter<Object, Object>> filtros = new ArrayList<>();
 
         if (!tema.equals("Todos")) {
             filtros.add(RowFilter.regexFilter("^" + tema + "$", 0));
         }
-
         if (!nivel.equals("Todos")) {
             filtros.add(RowFilter.regexFilter("^" + nivel + "$", 1));
         }

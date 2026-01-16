@@ -10,3 +10,9 @@ DETALLE_RESPUESTAS:
 - ¿Qué es Java? | R: Lenguaje de Programación | [CORRECTO]
 - ¿Cuál es el tamaño de un int en Java? | R: 64 bits | [INCORRECTO]
 --------------------------------------------------
+USUARIO:2|2
+PUNTAJE:100.0% (1/1)
+FECHA:2026-01-15T20:32:19.438602607
+DETALLE_RESPUESTAS:
+- 1 | R: 4 | [CORRECTO]
+--------------------------------------------------
