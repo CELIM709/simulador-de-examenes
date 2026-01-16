@@ -1,6 +1,7 @@
 com/sistema/ui/VentanaExamen.class
 com/sistema/ui/MenuPrincipal.class
 com/sistema/logica/BancoPreguntas.class
+com/sistema/ui/VistaBancoPreguntas$1.class
 com/sistema/ui/VistaHistorialUsuario.class
 com/sistema/modelos/RegistroRespuesta.class
 com/sistema/logica/GestorHistorial.class

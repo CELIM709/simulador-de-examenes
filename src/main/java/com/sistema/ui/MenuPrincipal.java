@@ -91,7 +91,7 @@ public class MenuPrincipal extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Establecer apariencia del sistema
+
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {
