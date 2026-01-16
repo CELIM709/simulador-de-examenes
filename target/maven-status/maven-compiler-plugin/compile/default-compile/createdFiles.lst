@@ -6,6 +6,7 @@ com/sistema/ui/VistaHistorialUsuario.class
 com/sistema/modelos/RegistroRespuesta.class
 com/sistema/logica/GestorHistorial.class
 com/sistema/logica/PersistenciaDatos.class
+com/sistema/ui/VistaHistorialUsuario$1.class
 com/sistema/logica/Evaluador.class
 com/sistema/modelos/Resultado.class
 com/sistema/modelos/Usuario.class

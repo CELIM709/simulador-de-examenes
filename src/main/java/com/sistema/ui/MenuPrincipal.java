@@ -1,7 +1,6 @@
 package com.sistema.ui;
 
 import com.sistema.logica.BancoPreguntas;
-import com.sistema.logica.PersistenciaDatos;
 import com.sistema.modelos.NivelDificultad;
 import com.sistema.modelos.Pregunta;
 import java.awt.*;
@@ -71,14 +70,9 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnHistorialArchivo.addActionListener(e -> {
-            List<String> historial = PersistenciaDatos.leerHistorial();
-            JTextArea area = new JTextArea(20, 40);
-            for (String s : historial) {
-                area.append(s + "\n");
-            }
-            JOptionPane.showMessageDialog(this, new JScrollPane(area), "Historial desde Archivo", JOptionPane.INFORMATION_MESSAGE);
+            VistaHistorialUsuario vista = new VistaHistorialUsuario(this);
+            vista.setVisible(true);
         });
-
         btnSalir.addActionListener(e -> System.exit(0));
 
         add(titulo);
