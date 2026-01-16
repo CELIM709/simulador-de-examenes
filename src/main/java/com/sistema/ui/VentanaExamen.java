@@ -1,7 +1,6 @@
 package com.sistema.ui;
 
 import com.sistema.logica.Evaluador;
-import com.sistema.logica.PersistenciaDatos;
 import com.sistema.modelos.Pregunta;
 import com.sistema.modelos.RegistroRespuesta;
 import com.sistema.modelos.Resultado;
@@ -146,12 +145,14 @@ public class VentanaExamen extends JFrame {
         }
 
         double nota = Evaluador.calcularPuntaje(aciertos, examenActual.size());
+
         Resultado resultado = new Resultado(usuario, aciertos, examenActual.size(), nota, respuestasDelUsuario);
 
-        // Guardar en archivo y en memoria
-        PersistenciaDatos.guardarResultado(resultado);
+        com.sistema.logica.GestorHistorial.guardarResultado(resultado);
 
-        JOptionPane.showMessageDialog(this, "Examen Terminado\nAciertos: " + aciertos + "\nNota: " + nota + "%");
+        com.sistema.logica.PersistenciaDatos.guardarResultado(resultado);
+
+        JOptionPane.showMessageDialog(this, "Examen Finalizado.\nEstudiante: " + usuario.getNombre() + "\nNota: " + nota + "%");
         this.dispose();
     }
 }

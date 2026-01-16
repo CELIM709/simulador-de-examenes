@@ -67,7 +67,12 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnRespuestasUsuario.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Funcionalidad: Ver Respuestas por Usuario (En desarrollo)");
+            if (com.sistema.logica.GestorHistorial.getHistorialGlobal().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Aún no hay exámenes realizados en esta sesión.");
+            } else {
+                VistaDetalleRespuestas vista = new VistaDetalleRespuestas(this);
+                vista.setVisible(true);
+            }
         });
 
         btnEstadisticas.addActionListener(e -> {

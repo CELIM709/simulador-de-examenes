@@ -16,3 +16,34 @@ FECHA:2026-01-15T20:32:19.438602607
 DETALLE_RESPUESTAS:
 - 1 | R: 4 | [CORRECTO]
 --------------------------------------------------
+USUARIO:1|1
+PUNTAJE:100.0% (1/1)
+FECHA:2026-01-15T20:38:57.487436891
+DETALLE_RESPUESTAS:
+- ¿Qué es la Encapsulación? | R: Ocultar el estado interno | [CORRECTO]
+--------------------------------------------------
+USUARIO:1|1
+PUNTAJE:0.0% (0/2)
+FECHA:2026-01-15T20:39:47.455643120
+DETALLE_RESPUESTAS:
+- ¿Cuál es el tamaño de un int en Java? | R: 64 bits | [INCORRECTO]
+- ¿Qué es Java? | R: Un SO | [INCORRECTO]
+--------------------------------------------------
+USUARIO:1|1
+PUNTAJE:0.0% (0/1)
+FECHA:2026-01-15T20:41:51.393430642
+DETALLE_RESPUESTAS:
+- ¿Qué estructura funciona como LIFO (Last In, First Out)? | R: LinkedList | [INCORRECTO]
+--------------------------------------------------
+USUARIO:1|1
+PUNTAJE:0.0% (0/1)
+FECHA:2026-01-15T20:43:07.104815723
+DETALLE_RESPUESTAS:
+- ¿Qué es la Encapsulación? | R: Crear copias | [INCORRECTO]
+--------------------------------------------------
+USUARIO:1|2
+PUNTAJE:0.0% (0/1)
+FECHA:2026-01-15T20:43:23.433409589
+DETALLE_RESPUESTAS:
+- ¿Qué es la Encapsulación? | R: Crear copias | [INCORRECTO]
+--------------------------------------------------
