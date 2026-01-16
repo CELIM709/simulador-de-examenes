@@ -8,6 +8,7 @@ com/sistema/logica/GestorHistorial.class
 com/sistema/logica/PersistenciaDatos.class
 com/sistema/ui/VistaHistorialUsuario$1.class
 com/sistema/logica/Evaluador.class
+com/sistema/ui/VentanaConfiguracionExamen.class
 com/sistema/modelos/Resultado.class
 com/sistema/modelos/Usuario.class
 com/sistema/ui/VistaBancoPreguntas.class

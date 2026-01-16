@@ -42,15 +42,20 @@ public class MenuPrincipal extends JFrame {
         JButton btnSalir = new JButton("Salir");
 
         btnSimulacion.addActionListener(e -> {
-            VentanaLogin login = new VentanaLogin(this);
-            login.setVisible(true);
+            VentanaConfiguracionExamen config = new VentanaConfiguracionExamen(this, banco);
+            config.setVisible(true);
 
-            if (!login.isCancelado()) {
-                List<Pregunta> preguntas = banco.generarExamen("Java", NivelDificultad.BASICO, 5);
+            if (!config.isCancelado()) {
+                String tema = config.getTemaSeleccionado();
+                NivelDificultad nivel = config.getNivelSeleccionado();
+
+                List<Pregunta> preguntas = banco.generarExamen(tema, nivel, 5);
+
                 if (preguntas.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "No hay preguntas disponibles en el banco.");
+                    JOptionPane.showMessageDialog(this,
+                            "No hay suficientes preguntas de " + tema + " en nivel " + nivel + ".");
                 } else {
-                    VentanaExamen examen = new VentanaExamen(login.getUsuario(), preguntas);
+                    VentanaExamen examen = new VentanaExamen(config.getUsuario(), preguntas);
                     examen.setVisible(true);
                 }
             }
