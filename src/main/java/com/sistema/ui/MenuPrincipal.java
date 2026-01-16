@@ -76,7 +76,12 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnEstadisticas.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Funcionalidad: Ver Estadísticas de Desempeño (En desarrollo)");
+            if (com.sistema.logica.GestorHistorial.getHistorialGlobal().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No hay datos suficientes para generar estadísticas.");
+            } else {
+                VistaEstadisticas vistaEst = new VistaEstadisticas(this);
+                vistaEst.setVisible(true);
+            }
         });
 
         btnHistorialArchivo.addActionListener(e -> {

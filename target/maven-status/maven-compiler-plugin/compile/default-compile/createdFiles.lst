@@ -6,6 +6,7 @@ com/sistema/ui/VistaBancoPreguntas$1.class
 com/sistema/ui/VistaHistorialUsuario.class
 com/sistema/modelos/RegistroRespuesta.class
 com/sistema/ui/VistaDetalleRespuestas$1.class
+com/sistema/logica/CalculadoraEstadisticas.class
 com/sistema/logica/GestorHistorial.class
 com/sistema/logica/PersistenciaDatos.class
 com/sistema/ui/VistaHistorialUsuario$1.class
@@ -15,6 +16,7 @@ com/sistema/modelos/Resultado.class
 com/sistema/modelos/Usuario.class
 com/sistema/ui/VentanaFormularioPregunta.class
 com/sistema/ui/VistaBancoPreguntas.class
+com/sistema/ui/VistaEstadisticas.class
 com/sistema/modelos/NivelDificultad.class
 com/sistema/ui/VentanaLogin.class
 com/sistema/modelos/Pregunta.class

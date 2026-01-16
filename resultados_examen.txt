@@ -47,3 +47,17 @@ FECHA:2026-01-15T20:43:23.433409589
 DETALLE_RESPUESTAS:
 - ¿Qué es la Encapsulación? | R: Crear copias | [INCORRECTO]
 --------------------------------------------------
+USUARIO:1|1
+TEMA:POO
+NIVEL:AVANZADO
+PUNTAJE:0.0
+ACIERTOS:0/1
+FECHA:2026-01-15T20:52:19.204508638
+--------------------------------------------------
+USUARIO:1|1
+TEMA:POO
+NIVEL:INTERMEDIO
+PUNTAJE:0.0
+ACIERTOS:0/2
+FECHA:2026-01-15T20:52:36.772592765
+--------------------------------------------------

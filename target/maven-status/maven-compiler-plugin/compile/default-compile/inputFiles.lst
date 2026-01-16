@@ -1,4 +1,5 @@
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/logica/BancoPreguntas.java
+/home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/logica/CalculadoraEstadisticas.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/logica/Evaluador.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/logica/GestorHistorial.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/logica/PersistenciaDatos.java
@@ -14,4 +15,5 @@
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/ui/VentanaLogin.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/ui/VistaBancoPreguntas.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/ui/VistaDetalleRespuestas.java
+/home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/ui/VistaEstadisticas.java
 /home/victor/Documentos/trabajo/uneg/celimar/prog3/proyecto 2/GeneradorExamenes/src/main/java/com/sistema/ui/VistaHistorialUsuario.java
