@@ -16,66 +16,61 @@ public class MenuPrincipal extends JFrame {
 
         this.banco = new BancoPreguntas();
 
-        setTitle("Sistema de Evaluación");
-        setSize(400, 300);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4, 1));
+        configurarVentana();
 
-        JButton btnSimulacion = new JButton("Iniciar Simulación");
-        btnSimulacion.addActionListener(e -> {
-            VentanaLogin login = new VentanaLogin(this);
-            login.setVisible(true);
-
-            if (!login.isCancelado()) {
-                // Generamos las preguntas aquí para pasarlas al constructor
-                List<Pregunta> preguntas = banco.generarExamen("Java", NivelDificultad.BASICO, 5);
-
-                // Pasamos el usuario Y la lista de preguntas
-                VentanaExamen examen = new VentanaExamen(login.getUsuario(), preguntas);
-                examen.setVisible(true);
-            }
-        });
-
-        add(new JLabel("Bienvenido al Sistema", SwingConstants.CENTER));
-        add(btnSimulacion);
+        inicializarComponentes();
 
         setLocationRelativeTo(null);
     }
 
     private void configurarVentana() {
         setTitle("Sistema de Evaluación - Menú Principal");
-        setSize(400, 500);
+        setSize(450, 550); // Ajuste de tamaño para los nuevos botones
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(5, 1, 10, 10));
+        setLayout(new GridLayout(7, 1, 10, 10));
     }
 
     private void inicializarComponentes() {
+
         JLabel titulo = new JLabel("Panel de Control", SwingConstants.CENTER);
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
+        titulo.setFont(new Font("Arial", Font.BOLD, 22));
 
+        JButton btnSimulacion = new JButton("Iniciar Examen");
         JButton btnVerBanco = new JButton("Ver Banco de Preguntas");
-        JButton btnSimulacion = new JButton("Iniciar Simulación de Examen");
-        JButton btnEstadisticas = new JButton("Estadísticas de Desempeño");
+        JButton btnRespuestasUsuario = new JButton("Ver Respuestas por Usuario");
+        JButton btnEstadisticas = new JButton("Ver Estadísticas de Desempeño");
+        JButton btnHistorialArchivo = new JButton("Ver Historial (Archivo)");
         JButton btnSalir = new JButton("Salir");
-
-        btnVerBanco.addActionListener(e -> {
-            VistaBancoPreguntas vistaBanco = new VistaBancoPreguntas(this, banco);
-            vistaBanco.setVisible(true);
-        });
 
         btnSimulacion.addActionListener(e -> {
             VentanaLogin login = new VentanaLogin(this);
             login.setVisible(true);
 
             if (!login.isCancelado()) {
-                List<Pregunta> preguntas = banco.generarExamen("Java", NivelDificultad.BASICO, 3);
-                VentanaExamen examen = new VentanaExamen(login.getUsuario(), preguntas);
-                examen.setVisible(true);
+                List<Pregunta> preguntas = banco.generarExamen("Java", NivelDificultad.BASICO, 5);
+                if (preguntas.isEmpty()) {
+                    JOptionPane.showMessageDialog(this, "No hay preguntas disponibles en el banco.");
+                } else {
+                    VentanaExamen examen = new VentanaExamen(login.getUsuario(), preguntas);
+                    examen.setVisible(true);
+                }
             }
         });
 
+        btnVerBanco.addActionListener(e -> {
+            VistaBancoPreguntas vistaBanco = new VistaBancoPreguntas(this, banco);
+            vistaBanco.setVisible(true);
+        });
+
+        btnRespuestasUsuario.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Funcionalidad: Ver Respuestas por Usuario (En desarrollo)");
+        });
+
         btnEstadisticas.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Funcionalidad: Ver Estadísticas de Desempeño (En desarrollo)");
+        });
+
+        btnHistorialArchivo.addActionListener(e -> {
             List<String> historial = PersistenciaDatos.leerHistorial();
             JTextArea area = new JTextArea(20, 40);
             for (String s : historial) {
@@ -87,13 +82,21 @@ public class MenuPrincipal extends JFrame {
         btnSalir.addActionListener(e -> System.exit(0));
 
         add(titulo);
-        add(btnVerBanco);
         add(btnSimulacion);
+        add(btnVerBanco);
+        add(btnRespuestasUsuario);
         add(btnEstadisticas);
+        add(btnHistorialArchivo);
         add(btnSalir);
     }
 
     public static void main(String[] args) {
+        // Establecer apariencia del sistema
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {
+        }
+
         SwingUtilities.invokeLater(() -> {
             new MenuPrincipal().setVisible(true);
         });

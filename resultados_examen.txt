@@ -1,0 +1,12 @@
+USUARIO:1|1
+PUNTAJE:0.0% (0/2)
+FECHA:2026-01-15T19:50:23.004000826
+DETALLE_RESPUESTAS:
+--------------------------------------------------
+USUARIO:1|1
+PUNTAJE:50.0% (1/2)
+FECHA:2026-01-15T20:09:38.499067033
+DETALLE_RESPUESTAS:
+- ¿Qué es Java? | R: Lenguaje de Programación | [CORRECTO]
+- ¿Cuál es el tamaño de un int en Java? | R: 64 bits | [INCORRECTO]
+--------------------------------------------------
