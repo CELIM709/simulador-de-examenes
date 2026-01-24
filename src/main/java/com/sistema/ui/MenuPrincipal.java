@@ -24,7 +24,7 @@ public class MenuPrincipal extends JFrame {
 
     private void configurarVentana() {
         setTitle("Sistema de Evaluación - Menú Principal");
-        setSize(450, 550); // Ajuste de tamaño para los nuevos botones
+        setSize(450, 550);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(7, 1, 10, 10));
     }
