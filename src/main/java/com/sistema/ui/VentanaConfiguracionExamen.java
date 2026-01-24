@@ -5,6 +5,7 @@ import com.sistema.modelos.NivelDificultad;
 import com.sistema.modelos.Usuario;
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 
 public class VentanaConfiguracionExamen extends JDialog {
 
@@ -16,39 +17,87 @@ public class VentanaConfiguracionExamen extends JDialog {
     private NivelDificultad nivelSeleccionado;
     private boolean cancelado = true;
 
+    private static final Color COLOR_FONDO_CLARO = Color.WHITE;
+    private static final Color COLOR_TEXTO_OSCURO = Color.BLACK;
+    private static final Color COLOR_BOTON_PRINCIPAL = new Color(0, 102, 204);
+    private static final Font FONT_LABEL = new Font("Arial", Font.BOLD, 12);
+    private static final Font FONT_BOTON = new Font("Arial", Font.BOLD, 14);
+
     public VentanaConfiguracionExamen(JFrame parent, BancoPreguntas banco) {
         super(parent, "Configuración del Examen", true);
-        setSize(350, 300);
+
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception ex) {
+
+        }
+
+        setSize(400, 320);
         setLocationRelativeTo(parent);
-        setLayout(new GridLayout(6, 2, 10, 10));
+        getContentPane().setBackground(COLOR_FONDO_CLARO);
+        setLayout(new BorderLayout());
 
-        add(new JLabel(" Nombre:"));
+        JPanel pnlFormulario = new JPanel(new GridLayout(4, 2, 15, 15));
+        pnlFormulario.setBackground(COLOR_FONDO_CLARO);
+        pnlFormulario.setBorder(new EmptyBorder(30, 30, 15, 30));
+
+        JLabel lblNombre = new JLabel(" Nombre:");
+        lblNombre.setFont(FONT_LABEL);
+        lblNombre.setForeground(COLOR_TEXTO_OSCURO);
+        pnlFormulario.add(lblNombre);
         txtNombre = new JTextField();
-        add(txtNombre);
+        txtNombre.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        pnlFormulario.add(txtNombre);
 
-        add(new JLabel(" Cédula:"));
+        JLabel lblCedula = new JLabel(" Cédula:");
+        lblCedula.setFont(FONT_LABEL);
+        lblCedula.setForeground(COLOR_TEXTO_OSCURO);
+        pnlFormulario.add(lblCedula);
         txtCedula = new JTextField();
-        add(txtCedula);
+        txtCedula.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        pnlFormulario.add(txtCedula);
 
-        add(new JLabel(" Seleccionar Tema:"));
+        JLabel lblTema = new JLabel(" Seleccionar Tema:");
+        lblTema.setFont(FONT_LABEL);
+        lblTema.setForeground(COLOR_TEXTO_OSCURO);
+        pnlFormulario.add(lblTema);
         cbTema = new JComboBox<>();
+        cbTema.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        cbTema.setBackground(Color.WHITE);
         for (String tema : banco.obtenerTemasDisponibles()) {
             cbTema.addItem(tema);
         }
-        add(cbTema);
+        pnlFormulario.add(cbTema);
 
-        add(new JLabel(" Dificultad:"));
+        JLabel lblNivel = new JLabel(" Dificultad:");
+        lblNivel.setFont(FONT_LABEL);
+        lblNivel.setForeground(COLOR_TEXTO_OSCURO);
+        pnlFormulario.add(lblNivel);
         cbNivel = new JComboBox<>(NivelDificultad.values());
-        add(cbNivel);
+        cbNivel.setFont(new Font("SansSerif", Font.PLAIN, 14));
+        cbNivel.setBackground(Color.WHITE);
+        pnlFormulario.add(cbNivel);
+
+        add(pnlFormulario, BorderLayout.CENTER);
+
+        JPanel pnlBotones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 15, 15));
+        pnlBotones.setBackground(COLOR_FONDO_CLARO);
+        pnlBotones.setBorder(new EmptyBorder(0, 30, 20, 30));
 
         JButton btnCancelar = new JButton("Cancelar");
+        btnCancelar.setFont(FONT_BOTON);
+        btnCancelar.setBackground(Color.LIGHT_GRAY);
+        btnCancelar.setForeground(COLOR_TEXTO_OSCURO);
         btnCancelar.addActionListener(e -> dispose());
-        add(btnCancelar);
+        pnlBotones.add(btnCancelar);
 
         JButton btnAceptar = new JButton("Iniciar");
+        btnAceptar.setFont(FONT_BOTON);
+        btnAceptar.setBackground(COLOR_BOTON_PRINCIPAL);
+        btnAceptar.setForeground(Color.WHITE);
         btnAceptar.addActionListener(e -> {
             if (txtNombre.getText().isEmpty() || txtCedula.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Por favor, complete sus datos personales.");
+                JOptionPane.showMessageDialog(this, "Por favor, complete sus datos personales.", "Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
                 usuario = new Usuario(txtNombre.getText(), txtCedula.getText());
                 temaSeleccionado = (String) cbTema.getSelectedItem();
@@ -57,7 +106,9 @@ public class VentanaConfiguracionExamen extends JDialog {
                 dispose();
             }
         });
-        add(btnAceptar);
+        pnlBotones.add(btnAceptar);
+
+        add(pnlBotones, BorderLayout.SOUTH);
     }
 
     public Usuario getUsuario() {
