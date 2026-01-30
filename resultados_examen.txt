@@ -1,70 +1,14 @@
-USUARIO:1|1
-PUNTAJE:0.0% (0/2)
-FECHA:2026-01-15T19:50:23.004000826
-DETALLE_RESPUESTAS:
---------------------------------------------------
-USUARIO:1|1
-PUNTAJE:50.0% (1/2)
-FECHA:2026-01-15T20:09:38.499067033
-DETALLE_RESPUESTAS:
-- ¿Qué es Java? | R: Lenguaje de Programación | [CORRECTO]
-- ¿Cuál es el tamaño de un int en Java? | R: 64 bits | [INCORRECTO]
---------------------------------------------------
-USUARIO:2|2
-PUNTAJE:100.0% (1/1)
-FECHA:2026-01-15T20:32:19.438602607
-DETALLE_RESPUESTAS:
-- 1 | R: 4 | [CORRECTO]
---------------------------------------------------
-USUARIO:1|1
-PUNTAJE:100.0% (1/1)
-FECHA:2026-01-15T20:38:57.487436891
-DETALLE_RESPUESTAS:
-- ¿Qué es la Encapsulación? | R: Ocultar el estado interno | [CORRECTO]
---------------------------------------------------
-USUARIO:1|1
-PUNTAJE:0.0% (0/2)
-FECHA:2026-01-15T20:39:47.455643120
-DETALLE_RESPUESTAS:
-- ¿Cuál es el tamaño de un int en Java? | R: 64 bits | [INCORRECTO]
-- ¿Qué es Java? | R: Un SO | [INCORRECTO]
---------------------------------------------------
-USUARIO:1|1
-PUNTAJE:0.0% (0/1)
-FECHA:2026-01-15T20:41:51.393430642
-DETALLE_RESPUESTAS:
-- ¿Qué estructura funciona como LIFO (Last In, First Out)? | R: LinkedList | [INCORRECTO]
---------------------------------------------------
-USUARIO:1|1
-PUNTAJE:0.0% (0/1)
-FECHA:2026-01-15T20:43:07.104815723
-DETALLE_RESPUESTAS:
-- ¿Qué es la Encapsulación? | R: Crear copias | [INCORRECTO]
---------------------------------------------------
-USUARIO:1|2
-PUNTAJE:0.0% (0/1)
-FECHA:2026-01-15T20:43:23.433409589
-DETALLE_RESPUESTAS:
-- ¿Qué es la Encapsulación? | R: Crear copias | [INCORRECTO]
---------------------------------------------------
-USUARIO:1|1
-TEMA:POO
-NIVEL:AVANZADO
-PUNTAJE:0.0
-ACIERTOS:0/1
-FECHA:2026-01-15T20:52:19.204508638
---------------------------------------------------
-USUARIO:1|1
-TEMA:POO
-NIVEL:INTERMEDIO
-PUNTAJE:0.0
-ACIERTOS:0/2
-FECHA:2026-01-15T20:52:36.772592765
---------------------------------------------------
 USUARIO:123|123
+TEMA:Java
+NIVEL:BASICO
+PUNTAJE:50.0
+ACIERTOS:1/2
+FECHA:2026-01-30T10:25:15.635404821
+--------------------------------------------------
+USUARIO:234|234
 TEMA:Java
 NIVEL:BASICO
 PUNTAJE:0.0
 ACIERTOS:0/2
-FECHA:2026-01-24T15:08:27.582139458
+FECHA:2026-01-30T10:25:29.947864493
 --------------------------------------------------
