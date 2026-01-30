@@ -44,4 +44,8 @@ public class Pregunta {
     public NivelDificultad getNivel() {
         return nivel;
     }
+
+    public int getIndiceCorrecto() {
+        return indiceCorrecto;
+    }
 }

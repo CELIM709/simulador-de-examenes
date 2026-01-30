@@ -1,6 +1,7 @@
 package com.sistema.ui;
 
 import com.sistema.logica.GestorHistorial;
+import com.sistema.modelos.Pregunta;
 import com.sistema.modelos.RegistroRespuesta;
 import com.sistema.modelos.Resultado;
 import java.awt.*;
@@ -93,17 +94,21 @@ public class VistaDetalleRespuestas extends JDialog {
 
         int i = 1;
         for (RegistroRespuesta reg : res.getDetalles()) {
-            sb.append("PREGUNTA ").append(i).append(": ").append(reg.getPregunta().getEnunciado()).append("\n");
+            Pregunta p = reg.getPregunta(); // Obtenemos la pregunta original
+            sb.append("PREGUNTA ").append(i).append(": ").append(p.getEnunciado()).append("\n");
 
             if (reg.isEsCorrecta()) {
                 sb.append("RESULTADO: [CORRECTA] ✔\n");
             } else {
                 sb.append("RESULTADO: [INCORRECTA] ✘\n");
                 sb.append("RESPUESTA DADA: ").append(reg.getTextoRespuestaUsuario()).append("\n");
-                sb.append("RESPUESTA CORRECTA: ").append(reg.getPregunta().getOpciones().get(0)).append("\n");
+
+                // --- AQUÍ ESTABA EL ERROR: Cambiamos get(0) por el índice real ---
+                String textoCorrecto = p.getOpciones().get(p.getIndiceCorrecto());
+                sb.append("RESPUESTA CORRECTA: ").append(textoCorrecto).append("\n");
             }
 
-            sb.append("RETROALIMENTACIÓN: ").append(reg.getPregunta().getRetroalimentacion()).append("\n");
+            sb.append("RETROALIMENTACIÓN: ").append(p.getRetroalimentacion()).append("\n");
             sb.append("--------------------------------------------------------------------------------\n\n");
             i++;
         }
