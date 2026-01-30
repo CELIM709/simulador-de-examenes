@@ -121,8 +121,8 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnEstadisticas.addActionListener(e -> {
-            if (com.sistema.logica.GestorHistorial.getHistorialGlobal().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "No hay datos suficientes para generar estadísticas.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            if (com.sistema.logica.PersistenciaDatos.recuperarResultadosHistoricos().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No hay datos históricos en el archivo para generar estadísticas.");
             } else {
                 VistaEstadisticas vistaEst = new VistaEstadisticas(this);
                 vistaEst.setVisible(true);

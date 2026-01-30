@@ -73,12 +73,10 @@ public class PersistenciaDatos {
             documento.add(new Paragraph("ESTUDIANTE: " + nombre.toUpperCase() + " | CÉDULA: " + cedula, fuenteSubtitulo));
             documento.add(new Paragraph(" ")); // Espacio
 
-            // Crear Tabla para este usuario
             PdfPTable tabla = new PdfPTable(5); // 5 columnas
             tabla.setWidthPercentage(100);
             tabla.setSpacingAfter(20);
 
-            // Cabeceras de la tabla
             String[] cabeceras = {"Fecha", "Tema", "Nivel", "Aciertos", "Puntaje"};
             for (String h : cabeceras) {
                 PdfPCell cell = new PdfPCell(new Phrase(h, fuenteTablaCabecera));
@@ -87,7 +85,6 @@ public class PersistenciaDatos {
                 tabla.addCell(cell);
             }
 
-            // Llenar filas del usuario
             for (String[] fila : entrada.getValue()) {
                 for (String dato : fila) {
                     tabla.addCell(new Phrase(dato, new Font(Font.FontFamily.HELVETICA, 9)));
