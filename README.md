@@ -1,6 +1,7 @@
 # 📝 Sistema de Evaluación y Simulador de Exámenes
 
-**👥 Estudiantes:** Celimar Rojas
+**👥 Estudiantes:** Celimar Rojas CI: 31.981.398
+                   Y Nicole Sereno CI: 31.275.411
 
 ---
 
